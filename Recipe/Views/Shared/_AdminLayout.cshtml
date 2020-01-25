@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet"
+          asp-href-include="/lib/bootstrap/**/*.min.css"
+          asp-href-exclude="**/*-reboot*,**/*-grid*" />
+    <link rel="stylesheet" href="/css/AdminStyle.css" />
+
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-info font-weight-bold">
+        <h4>@ViewBag.Title</h4>
+        <div class="pl-4 collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" asp-action="CuisineIndex">List of Cuisine</a>
+                </li>
+            </ul>
+            <div class="col-1">
+                <a class="btn btn-sm btn-primary"
+                   asp-action="Logout" asp-controller="Account">Log Out</a>
+            </div>
+        </div>
+    </nav>
+    @if (TempData["message"] != null)
+    {
+        <div class="alert alert-success mt-1">@TempData["message"]</div>
+    }
+    @RenderBody()
+</body>
+</html>

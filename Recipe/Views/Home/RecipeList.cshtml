@@ -1,0 +1,56 @@
+﻿@model RecipeAndCuisineViewModel
+@{
+    ViewBag.Title = "Recipe List";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Recipe List</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Cuisine</th>
+                    <th>Introduction</th>
+                    <th>Ingredients</th>
+                    <th>Brief directions</th>
+                    <th>Cooking time</th>
+                    <th>Level of difficulty</th>
+                    <th>Vegetarian</th>
+                    <th>Allergy-free</th>
+                    <th>Posting time</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Recipe r in Model.Recipes)
+                {
+                    <tr>
+                        <td>@Html.ActionLink(r.Name, "ViewRecipe", new { recipeId = r.RecipeID })</td>
+                        @foreach (Cuisine c in Model.Cuisines)
+                        {
+                            @if (c.CuisineType == r.Cuisine.CuisineType)
+                            {
+                                <td>@c.CuisineType</td>
+                            }
+                        }
+                        <td>@r.Introduction</td>
+                        <td>@r.Ingredients</td>
+                        <td>@r.Directions</td>
+                        <td>@r.Time</td>
+                        <td>@r.Difficulty</td>
+                        <td>@(r.Vegetarian ? "Yes" : "No")</td>
+                        <td>@(r.Allergy ? "Yes" : "No")</td>
+                        <td>@r.PostingTime</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

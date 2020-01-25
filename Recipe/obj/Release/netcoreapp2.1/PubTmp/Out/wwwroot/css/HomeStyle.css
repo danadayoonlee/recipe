@@ -1,0 +1,44 @@
+﻿.img-margin {
+    margin: 1rem 0;
+}
+
+.p-margin {
+    margin-top: 1rem;
+}
+
+.lable-margin {
+    margin-right: 0.5rem;
+}
+
+.btn-margin {
+    margin: 1rem 0;
+}
+
+.bg-color {
+    background-color: #f3f0e9;
+}
+
+.main-content {
+    margin: 5% auto;
+}
+
+.nav-margin {
+    margin: 0 6px 6px 0;
+}
+
+.wrapper {
+    margin: 2%;
+}
+
+.nav-wrapper {
+    margin: 0 auto;
+    width: 98%;
+}
+
+.ul-margin {
+    margin-top: 4px;
+}
+
+.add-features {
+    margin-top: 20px;
+}

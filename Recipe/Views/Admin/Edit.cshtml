@@ -1,0 +1,63 @@
+﻿@model Recipe
+
+@{
+    ViewBag.Title = "Edit Recipe";
+    Layout = "_AdminLayout";
+}
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="RecipeID" />
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <div><span asp-validation-for="Name" class="text-danger"></span></div>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Cuisine">Type of cuisine</label>
+        <div><span asp-validation-for="Cuisine.CuisineType" class="text-danger"></span></div>
+        <select asp-for="Cuisine.CuisineType" asp-items="@(new SelectList(ViewBag.listofitems, "CuisineType", "CuisineType"))"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Introduction"></label>
+        <div><span asp-validation-for="Introduction" class="text-danger"></span></div>
+        <input asp-for="Introduction" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Ingredients"></label>
+        <div><span asp-validation-for="Ingredients" class="text-danger"></span></div>
+        <input asp-for="Ingredients" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Directions"></label>
+        <div><span asp-validation-for="Directions" class="text-danger"></span></div>
+        <input asp-for="Directions" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Time"></label>
+        <div><span asp-validation-for="Time" class="text-danger"></span></div>
+        <input asp-for="Time" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Difficulty"></label>
+        <select class="form-control" asp-for="Difficulty">
+            <option value="">Choose an option</option>
+            <option value="Easy">Easy</option>
+            <option value="Soso">So so</option>
+            <option value="Difficult">Difficult</option>
+        </select>
+        <div class="add-features">
+            <label>Additional features:</label>
+            <span class="form-group">
+                <input type="checkbox" asp-for="Vegetarian" name="Vegetarian" value="true"> Is Vegetarian?
+            </span>
+            <span class="form-group">
+                <input type="checkbox" asp-for="Allergy" name="Allergy" value="true"> Is Allergy-free?
+            </span>
+        </div>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary" type="submit">Save</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>

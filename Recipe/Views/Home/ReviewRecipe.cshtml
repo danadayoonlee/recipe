@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Review Recipe";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Review Recipe</h2>
+        <form asp-action="ReviewRecipe" method="Post">
+            <p class="p-margin">Is this recipe easy to follow?</p>
+            <div>
+                <input type="radio" name="difficulty" value="Really difficult" required><lable class="lable-margin">Really difficult</lable>
+                <input type="radio" name="difficulty" value="A bit difficult"><lable class="lable-margin">A bit difficult</lable>
+                <input type="radio" name="difficulty" value="So so"><lable class="lable-margin">So so</lable>
+                <input type="radio" name="difficulty" value="Easy"><lable class="lable-margin">Easy</lable>
+                <input type="radio" name="difficulty" value="Super easy"><lable class="lable-margin">Super easy</lable>
+            </div>
+            <p class="p-margin">How often do you use this recipe?</p>
+            <div>
+                <input type="radio" name="usage" value="Never" required><lable class="lable-margin">Never</lable>
+                <input type="radio" name="usage" value="Rarely"><lable class="lable-margin">Rarely</lable>
+                <input type="radio" name="usage" value="Sometimes"><lable class="lable-margin">Sometimes</lable>
+                <input type="radio" name="usage" value="Often"><lable class="lable-margin">Often</lable>
+                <input type="radio" name="usage" value="Everyday"><lable class="lable-margin">Everyday</lable>
+            </div>
+            <p class="p-margin">How do you rate on this recipe?</p>
+            <div>
+                <input type="radio" name="preference" value="Well below average" required><lable class="lable-margin">Well below average</lable>
+                <input type="radio" name="preference" value="Below average"><lable class="lable-margin">Below average</lable>
+                <input type="radio" name="preference" value="Average"><lable class="lable-margin">Average</lable>
+                <input type="radio" name="preference" value="Above average"><lable class="lable-margin">Above average</lable>
+                <input type="radio" name="preference" value="Well above average"><lable class="lable-margin">Well above average</lable>
+            </div>
+            <p class="p-margin">Any comments:</p>
+            <input class="form-control" type="text" name="comment">
+            <div class="text-center">
+                <button asp-action="Index" class="btn btn-primary btn-margin" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

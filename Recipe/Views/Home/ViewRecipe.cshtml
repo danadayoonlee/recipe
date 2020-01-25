@@ -1,0 +1,48 @@
+﻿@model Recipe
+@{
+    ViewBag.Title = "View Recipe";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Recipe Detail</h2>
+        <div><img src="/images/serving_icon.png" alt="serving icon" /></div>
+        <h4>Name</h4>
+        <p>@Model.Name</p>
+        <h4>Type of Cuisine</h4>
+        <p>@Model.Cuisine.CuisineType</p>
+        <h4>Intro</h4>
+        <p>@Model.Introduction</p>
+        <h4>Ingredients</h4>
+        <p>@Model.Ingredients</p>
+        <h4>Directions</h4>
+        <p>@Model.Directions</p>
+        <h4>Cooking time</h4>
+        <p>@Model.Time</p>
+        <h4>Level of difficulty</h4>
+        <p>@Model.Difficulty</p>
+        <h4>Is vegetarian?</h4>
+        <p>@(Model.Vegetarian ? "Yes" : "No")</p>
+        <h4>Is allergy-free?</h4>
+        <p>@(Model.Allergy ? "Yes" : "No")</p>
+        <h4>Posting Time</h4>
+        <p>@Model.PostingTime</p>
+        <!-- Review -->
+        <form asp-action="ReviewRecipe" method="get">
+            <button class="btn btn-primary btn-margin">Review recipe</button>
+        </form>
+        <h4>Review</h4>
+        <div class="blog-footer"></div>
+        <span><strong>Laura</strong></span><span><i>- SEPT 24, 2019</i></span>
+        <div class="star">★★★★★</div>
+        <p>lovely dish, I would serve mine with baked bread and sauce for lunch</p>
+        <div class="blog-footer"></div>
+    </div>
+</body>
+</html>
