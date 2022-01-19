@@ -1,7 +1,10 @@
 # Recipe
 
-This is a recipe site that you can add or see recipes.
-The information will be stored in a database if you make any changes. Try it out!
+This is a recipe website that users can add or see recipes.
+Admins who are logged in have more access to manage recipes using CRUD operations.
+
+- Microsoft SQL Server is connected to store information
+- Deployed a website using Azure
 
 ## FAQ
 
@@ -16,4 +19,4 @@ Admins who are logged in this system can manage recipes using CRUD.
 
 ## DEMO
 
-https://dayoonlee.azurewebsites.net/
+https://dayoonlee.azurewebsites.net/ (Currently unavailable to view)
