@@ -8,8 +8,6 @@ Admins who are logged in have more access to manage recipes using CRUD operation
 
 ## FAQ
 
-Admins who are logged in this system can manage recipes using CRUD.
-
 - **How to go to admin page?**
     - https://dayoonlee.azurewebsites.net/admin
 
