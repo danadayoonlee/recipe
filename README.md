@@ -1,6 +1,6 @@
 # Recipe
 
-This is a recipe website that users can add or see recipes.
+This is a recipe website that users can add or see recipes. <br>
 Admins who are logged in have more access to manage recipes using CRUD operations.
 
 - Microsoft SQL Server is connected to store information
